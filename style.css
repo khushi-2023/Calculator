@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    font-family: sans-serif;
+    outline: none;
+
+}
+
+.container{
+    margin: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    position: absolute;
+   
+}
+.Calculator{
+    background-color: #ecf0f3;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: inset 5px 5px 12px #ffffff,
+                      5px 5px 12px rgba(0,0,0,.16);
+    display: grid;
+    grid-template-columns: repeat(4, 68px);
+}
+input{
+    grid-column: span 4;
+    height: 70px;
+    width: 260px;
+    background-color: #ecf0f3;
+    box-shadow: inset -5px -5px 12px #ffffff,
+                inset 5px 5px 12px rgba(0,0,0,.16);
+    border: none;
+    border-radius: 30px;
+    color: rgb(53, 176, 180);
+    font-size:  50px;
+    text-align: end;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 20px;
+
+}
+button{
+    height: 48px;
+    width: 48px;
+    background-color: #ecf0f3;
+    box-shadow: -5px -5px 12px #ffffff,
+                 5px 5px 12px rgba(0,0,0,.16);
+    border: none;
+    border-radius: 50%;
+    margin: 8px;
+    font-size: 16px;
+
+}
+.equal{
+    width: 115px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: -5px -5px 12px #ffffff,
+                      5px 5px 12px rgba(0,0,0,.1.6);
+
+}
+
+.slider {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    align-items: left;
+    justify-content: left;
+    margin-left: 1000px;
+    margin-top: 180px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+
+}
+.slider span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+}
+.slider span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    box-shadow: #ffffff;
+    /*bshadow: rgb(124, 114, 114), rgb(194, 212, 194);*/
+    object-fit: cover;
+    transition: 2s;
+}
+.slider span:hover img {
+    transform: translateY(-50px);
+}
+.content{
+    text-align: center;
+}
+.content h1{
+    font-size: 160px;
+    color: #ffffff;
+    font-weight: 600;
+
+}
